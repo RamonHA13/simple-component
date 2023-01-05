@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Component</title>
+</head>
+<body>
+    <h1 style="text-align: center;">Components in js vanilla</h1>
+    <div id="root" style="display: flex; justify-content: space-between;">
+        
+    </div>
+
+    <script>
+
+        
+        const users = 
+        [
+            {
+            id: 1,
+            picture: `https://rickandmortyapi.com/api/character/avatar/${Math.floor(Math.random() * 100)}.jpeg`,
+            Nombre: "Ramón", 
+            Edad: 20, 
+            }, 
+            {      
+            id: 2,      
+            picture: `https://rickandmortyapi.com/api/character/avatar/${Math.floor(Math.random() * 100)}.jpeg`,
+            Nombre: "Estrella", 
+            Edad: 30, 
+            },
+            {
+            id: 3,      
+            picture: `https://rickandmortyapi.com/api/character/avatar/${Math.floor(Math.random() * 100)}.jpeg`,
+            Nombre: "Josúe", 
+            Edad: 18,  
+            }
+        ];
+
+        const componentUserCard = props => {
+            
+            const root = document.getElementById("root");
+            const userCardArray = props.map((element,index) => {
+                return(
+                console.log(element),
+                `
+                <div>
+                    <h2>User no: ${element.id}</h2>
+                    <picture>
+                        <img src='${element.picture}' />
+                    </picture>
+                    <p>Nombre: ${element.Nombre}</p>
+                    <p>Edad: ${element.Edad}</p>
+                </div>
+                `)
+                
+            })
+            
+            return root.innerHTML += userCardArray 
+        };
+        
+        componentUserCard(users);
+        
+   </script>
+</body>
+</html>
