@@ -8,59 +8,10 @@
 </head>
 <body>
     <h1 style="text-align: center;">Components in js vanilla</h1>
-    <div id="root" style="display: flex; justify-content: space-between;">
+    <div id="root" style="display: grid; grid-template-columns: repeat(3, 1fr);">
         
     </div>
 
-    <script>
-
-        
-        const users = 
-        [
-            {
-            id: 1,
-            picture: `https://rickandmortyapi.com/api/character/avatar/${Math.floor(Math.random() * 100)}.jpeg`,
-            Nombre: "Ramón", 
-            Edad: 20, 
-            }, 
-            {      
-            id: 2,      
-            picture: `https://rickandmortyapi.com/api/character/avatar/${Math.floor(Math.random() * 100)}.jpeg`,
-            Nombre: "Estrella", 
-            Edad: 30, 
-            },
-            {
-            id: 3,      
-            picture: `https://rickandmortyapi.com/api/character/avatar/${Math.floor(Math.random() * 100)}.jpeg`,
-            Nombre: "Josúe", 
-            Edad: 18,  
-            }
-        ];
-
-        const componentUserCard = props => {
-            
-            const root = document.getElementById("root");
-            const userCardArray = props.map((element,index) => {
-                return(
-                console.log(element),
-                `
-                <div>
-                    <h2>User no: ${element.id}</h2>
-                    <picture>
-                        <img src='${element.picture}' />
-                    </picture>
-                    <p>Nombre: ${element.Nombre}</p>
-                    <p>Edad: ${element.Edad}</p>
-                </div>
-                `)
-                
-            })
-            
-            return root.innerHTML += userCardArray 
-        };
-        
-        componentUserCard(users);
-        
-   </script>
+    <script src="index.js"></script>
 </body>
 </html>
